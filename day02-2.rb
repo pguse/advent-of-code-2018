@@ -31,11 +31,14 @@ data = (File.read filename).split
 len_data = data.length
 
 i = 0
-while i < len_data - 1
+done = false
+while i < len_data - 1 && !done
   j = i + 1
   while j < len_data
     if compare(data[i], data[j]) == 1
       puts common(data[i], data[j])
+      done = true
+      break
     end
     j = j + 1
   end
